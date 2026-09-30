@@ -523,3 +523,74 @@ export const SHOW_DESTACADO = {
      { tipo: 'video', src: showdes3 },
   ],
 }
+
+/* ══════════════════════════════════════════
+   FRASES — las 4 "puertas" y su contenido
+══════════════════════════════════════════ */
+export const FRASES_CATEGORIAS = [
+  {
+    id: 'amor',
+    nombre: 'Amor',
+    emoji: '❤️',
+    color: '#E91E8C',
+    colorGlow: 'rgba(233, 30, 140, 0.35)',
+    colorTinte: 'rgba(233, 30, 140, 0.08)',
+  },
+  {
+    id: 'desamor',
+    nombre: 'Desamor',
+    emoji: '💙',
+    color: '#2E6FE8',
+    colorGlow: 'rgba(46, 111, 232, 0.35)',
+    colorTinte: 'rgba(46, 111, 232, 0.08)',
+  },
+  {
+    id: 'perreo',
+    nombre: 'Perreo',
+    emoji: '💚',
+    color: '#0F6B34',
+    colorGlow: 'rgba(15, 107, 52, 0.4)',
+    colorTinte: 'rgba(15, 107, 52, 0.1)',
+  },
+  {
+    id: 'calle',
+    nombre: 'Calle',
+    emoji: '🩵',
+    color: '#0C6E7A',
+    colorGlow: 'rgba(12, 110, 122, 0.4)',
+    colorTinte: 'rgba(12, 110, 122, 0.1)',
+  },
+]
+
+/* Frases de ejemplo — reemplaza por las reales.
+   "categoria" debe coincidir con el "id" de arriba. */
+export const FRASES = [
+  {
+    id: 'f1',
+    categoria: 'amor',
+    texto: 'Contigo hasta el amanecer, no hay reloj que nos detenga.',
+    cancion: 'Nombre de la canción',
+    streaming: { spotify: '#', youtube: '#', apple: '#' },
+  },
+  {
+    id: 'f2',
+    categoria: 'desamor',
+    texto: 'Me quedé con la canción, tú te llevaste todo lo demás.',
+    cancion: 'Nombre de la canción',
+    streaming: { spotify: '#', youtube: '#', apple: '#' },
+  },
+  {
+    id: 'f3',
+    categoria: 'perreo',
+    texto: 'Bájale despacio que la noche apenas empieza.',
+    cancion: 'Nombre de la canción',
+    streaming: { spotify: '#', youtube: '#', apple: '#' },
+  },
+  {
+    id: 'f4',
+    categoria: 'calle',
+    texto: 'Desde el barrio hasta la cima, sin soltar la esencia.',
+    cancion: 'Nombre de la canción',
+    streaming: { spotify: '#', youtube: '#', apple: '#' },
+  },
+]

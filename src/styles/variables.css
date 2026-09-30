@@ -1,0 +1,78 @@
+/* ============================================
+   JORY BOY FAN PAGE — DESIGN TOKENS
+   variables.css
+   ============================================ */
+
+:root {
+
+  /* --- COLORES BASE --- */
+  --color-bg:           #0A0A0A;   /* Fondo principal negro profundo */
+  --color-bg-alt:       #111111;   /* Fondo alternativo para secciones */
+  --color-surface:      #1A1A1A;   /* Superficies de cards y contenedores */
+
+  /* --- ACENTO DORADO --- */
+  --color-gold:         #FFD700;   /* Dorado principal */
+  --color-gold-hover:   #FFC300;   /* Dorado hover / glow */
+  --color-gold-muted:   #B8960C;   /* Dorado apagado para detalles sutiles */
+
+  /* --- TEXTO --- */
+  --color-text-primary:   #F0F0F0; /* Texto principal blanco humo */
+  --color-text-secondary: #A0A0A0; /* Texto secundario gris claro */
+  --color-text-muted:     #555555; /* Texto desactivado / placeholder */
+
+  /* --- GLASSMORPHISM --- */
+  --glass-bg:           rgba(255, 255, 255, 0.05);  /* Fondo glass */
+  --glass-border:       rgba(255, 255, 255, 0.08);  /* Borde glass */
+  --glass-blur:         blur(12px);                 /* Desenfoque glass */
+  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.4); /* Sombra glass */
+
+  /* --- GLOW DORADO (para efectos hover) --- */
+  --gold-glow:          0 0 20px rgba(255, 215, 0, 0.3);
+  --gold-glow-strong:   0 0 40px rgba(255, 215, 0, 0.5);
+
+  /* --- TIPOGRAFÍAS --- */
+  --font-display:  'Bebas Neue', sans-serif;      /* Títulos grandes */
+  --font-body:     'Inter', sans-serif;           /* Párrafos y texto general */
+  --font-accent:   'Space Grotesk', sans-serif;   /* Labels, tags, fechas */
+
+  /* --- TAMAÑOS TIPOGRÁFICOS --- */
+  --text-xs:    0.75rem;   /*  12px */
+  --text-sm:    0.875rem;  /*  14px */
+  --text-base:  1rem;      /*  16px */
+  --text-lg:    1.25rem;   /*  20px */
+  --text-xl:    1.5rem;    /*  24px */
+  --text-2xl:   2rem;      /*  32px */
+  --text-3xl:   3rem;      /*  48px */
+  --text-4xl:   4rem;      /*  64px */
+  --text-hero:  7rem;      /* 112px — nombre del artista en hero */
+
+  /* --- ESPACIADO --- */
+  --space-xs:   0.5rem;    /*  8px */
+  --space-sm:   1rem;      /* 16px */
+  --space-md:   1.5rem;    /* 24px */
+  --space-lg:   2rem;      /* 32px */
+  --space-xl:   3rem;      /* 48px */
+  --space-2xl:  5rem;      /* 80px */
+  --space-3xl:  8rem;      /* 128px */
+
+  /* --- BORDES --- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  /* --- TRANSICIONES --- */
+  --transition-fast:    0.2s ease;
+  --transition-normal:  0.3s ease;
+  --transition-slow:    0.5s ease;
+
+  /* --- Z-INDEX --- */
+  --z-navbar:   100;
+  --z-overlay:  50;
+  --z-content:  10;
+  --z-base:     1;
+
+  --font-script: 'Dynalight', cursive;   /* NUEVO — solo para "Fanáticos" */
+  --font-signature: 'Monsieur La Doulaise', cursive;   /* NUEVO — solo para "Santiago" */
+
+}

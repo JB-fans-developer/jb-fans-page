@@ -1,0 +1,217 @@
+/* ============================================
+   JORY BOY FAN PAGE — HERO STYLES
+   Hero.module.css
+   ============================================ */
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  background-image: var(--bg-desktop);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- OVERLAY — más suave para que la imagen respire --- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      rgba(10, 10, 10, 0.93) 0%,
+      rgba(10, 10, 10, 0.65) 40%,
+      rgba(10, 10, 10, 0.08) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- CONTENIDO LADO IZQUIERDO --- */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding-left: var(--space-3xl);
+  /* Limitamos el ancho para que el texto no se encime con la imagen */
+  max-width: 48%;
+}
+
+/* --- LABEL SUPERIOR --- */
+.label {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-gold-muted);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-xl);
+  white-space: nowrap;
+}
+
+/* --- TÍTULO PRINCIPAL --- */
+/* Contenedor: apila las 3 líneas como bloque compacto */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Línea 1 — "UN SITIO PARA": condensada, angosta, tracking reducido */
+.titleLine1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.3vw, 2.3rem);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--color-text-primary);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+}
+
+/* Línea 2 — "VERDADEROS": protagonista, misma fuente que línea 1, dorado */
+.titleLine2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 7.2rem);
+  letter-spacing: 0.01em;
+  line-height: 0.85;
+  color: var(--color-gold);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  margin-top: -0.02em;
+  white-space: nowrap;
+}
+
+/* Línea 3 — "Fanáticos": Dynalight, blanco, se superpone sobre VERDADEROS */
+.titleLine3 {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5.8vw, 5.6rem);
+  line-height: 1;
+  color: var(--color-text-primary);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  margin-top: -0.22em;
+  margin-left: 0.05em;
+  white-space: nowrap;
+}
+
+/* --- BOTÓN CTA --- */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.7);
+  /* antes: 0.55 + glass-blur */
+  border: 1.5px solid var(--color-gold);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  /* antes: gold-glow-strong pesado */
+  transition:
+    background var(--transition-normal),
+    box-shadow var(--transition-normal),
+    transform var(--transition-fast);
+}
+
+.cta:hover {
+  background: rgba(255, 215, 0, 0.12);
+  box-shadow: var(--gold-glow), 0 4px 16px rgba(0, 0, 0, 0.5);
+  /* antes: gold-glow-strong */
+  transform: translateY(-2px);
+}
+
+.cta:active {
+  transform: translateY(0px);
+}
+
+.ctaText {
+  font-family: var(--font-accent);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.ctaArrow {
+  font-size: var(--text-lg);
+  color: var(--color-gold);
+  transition: transform var(--transition-fast);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(5px);
+}
+
+/* --- RESPONSIVE TABLET (max 1024px) --- */
+@media (max-width: 1024px) {
+  .content {
+    max-width: 55%;
+    padding-left: var(--space-2xl);
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  }
+}
+
+/* --- RESPONSIVE MÓVIL (max 768px) --- */
+@media (max-width: 768px) {
+  .hero {
+    background-image: var(--bg-mobile);
+    background-size: cover;
+    background-position: center 65%;
+    align-items: flex-end;
+    padding-bottom: var(--space-2xl);
+  }
+
+  /* En móvil el overlay cubre más para legibilidad */
+  .overlay {
+    background: linear-gradient(to top,
+        rgba(10, 10, 10, 0.97) 0%,
+        rgba(10, 10, 10, 0.80) 50%,
+        rgba(10, 10, 10, 0.30) 100%);
+  }
+
+  .content {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .titleLine1 {
+    font-size: clamp(0.95rem, 4vw, 1.6rem);
+  }
+
+  .titleLine2 {
+    font-size: clamp(2.2rem, 11vw, 3.6rem);
+  }
+
+  .titleLine3 {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+    margin-top: -0.2em;
+  }
+
+  .cta {
+    padding: var(--space-sm) var(--space-lg);
+  }
+}
+
+/* --- RESPONSIVE MÓVIL PEQUEÑO (max 400px) --- */
+@media (max-width: 400px) {
+  .titleLine2 { font-size: clamp(2rem, 12vw, 3rem); }
+  .titleLine3 { font-size: clamp(1.6rem, 10vw, 2.6rem); }
+}

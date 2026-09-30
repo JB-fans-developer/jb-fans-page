@@ -1,0 +1,46 @@
+/* ============================================
+   JORY BOY FAN PAGE — TIPOGRAFÍA GLOBAL
+   fonts.css
+   ============================================ */
+
+/* --- DISPLAY: Bebas Neue --- */
+/* Uso: títulos de sección, nombre del artista, headings h1-h2 */
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Bebas Neue solo tiene un peso */
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+/* --- BODY: Inter --- */
+/* Uso: párrafos, descripciones, texto general */
+h3, h4, h5, h6, p, span, a, li {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+/* --- ACCENT: Space Grotesk --- */
+/* Uso: labels, tags, fechas, botones, navegación */
+.label,
+.tag,
+.date,
+nav,
+button {
+  font-family: var(--font-accent);
+  letter-spacing: 0.06em;
+}
+
+/* --- TAMAÑOS BASE --- */
+h1 { font-size: var(--text-hero); }
+h2 { font-size: var(--text-4xl);  }
+h3 { font-size: var(--text-2xl);  font-weight: 600; }
+h4 { font-size: var(--text-xl);   font-weight: 500; }
+p  { font-size: var(--text-base); font-weight: 300; color: var(--color-text-secondary); }
+
+/* --- RESPONSIVE TIPOGRAFÍA --- */
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+}

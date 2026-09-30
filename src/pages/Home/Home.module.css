@@ -1,0 +1,10 @@
+/* ============================================
+   JORY BOY FAN PAGE — HOME PAGE STYLES
+   Home.module.css
+   ============================================ */
+
+.home {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}

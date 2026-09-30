@@ -1,0 +1,107 @@
+/* ============================================
+   JORY BOY FAN PAGE — ESTILOS GLOBALES
+   global.css
+   ============================================ */
+
+/* --- IMPORTS --- */
+@import './variables.css';
+@import './fonts.css';
+
+/* --- RESET BASE --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- ROOT Y BODY --- */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- LINKS --- */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+/* --- IMÁGENES --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- LISTAS --- */
+ul, ol {
+  list-style: none;
+}
+
+/* --- BOTONES --- */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-accent);
+}
+
+/* --- SELECCIÓN DE TEXTO --- */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+/* --- SCROLLBAR PERSONALIZADA --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-muted);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* --- UTILIDAD: GLASSMORPHISM --- */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+/* --- UTILIDAD: TEXTO DORADO --- */
+.text-gold {
+  color: var(--color-gold);
+}
+
+/* --- UTILIDAD: CONTENEDOR CENTRADO --- */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}

@@ -1,0 +1,179 @@
+/* ============================================
+   JORY BOY FAN PAGE — GALERÍA STYLES
+   Galeria.module.css
+   ============================================ */
+
+.galeria {
+  background: var(--color-bg);
+  overflow-x: hidden;
+  padding-top: var(--space-2xl);
+}
+
+/* ══════════════════════════════════════════
+   ENCABEZADO
+══════════════════════════════════════════ */
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg) var(--space-2xl);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-gold-muted);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-md);
+}
+
+.titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
+  color: var(--color-text-primary);
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+  margin-bottom: var(--space-md);
+}
+
+.tituloGold {
+  font-family: var(--font-display);
+  letter-spacing: inherit;
+  color: var(--color-gold);
+  text-shadow: var(--gold-glow);
+}
+
+.subtitulo {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(var(--text-sm), 1.3vw, var(--text-lg));
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════
+   GRID EDITORIAL — MASONRY ART-DIRECTED
+══════════════════════════════════════════ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 130px;
+  grid-auto-flow: dense;
+  gap: var(--space-md);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg) var(--space-3xl);
+}
+
+/* --- ITEM BASE --- */
+.item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.item:hover {
+  border-color: var(--color-gold-muted);
+  box-shadow: var(--gold-glow);
+}
+
+.itemImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%);
+  transition: transform var(--transition-slow), filter var(--transition-slow);
+}
+
+.item:hover .itemImg {
+  transform: scale(1.045);
+  filter: grayscale(0%);
+}
+
+/* Overlay discreto al hover */
+.itemOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 55%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+  transition: opacity var(--transition-normal);
+}
+
+.item:hover .itemOverlay {
+  opacity: 1;
+}
+
+.itemIcon {
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* --- VARIANTES DE TAMAÑO (Desktop — 4 columnas) --- */
+.spanSmall { grid-column: span 1; grid-row: span 2; }
+.spanTall  { grid-column: span 1; grid-row: span 3; }
+.spanWide  { grid-column: span 2; grid-row: span 2; }
+.spanBig   { grid-column: span 2; grid-row: span 4; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — TABLET (max 1024px) → 3 columnas
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 115px;
+  }
+  .spanBig { grid-column: span 2; grid-row: span 3; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MÓVIL (max 640px) → 2 columnas
+══════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .header { padding: var(--space-xl) var(--space-md) var(--space-lg); }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 105px;
+    gap: var(--space-sm);
+    padding: 0 var(--space-md) var(--space-2xl);
+  }
+
+  .spanSmall { grid-column: span 1; grid-row: span 2; }
+  .spanTall  { grid-column: span 1; grid-row: span 3; }
+  .spanWide  { grid-column: span 2; grid-row: span 2; }
+  .spanBig   { grid-column: span 2; grid-row: span 3; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MÓVIL PEQUEÑO (max 400px)
+   Se mantienen 2 columnas para conservar el efecto
+   collage — solo se ajusta el alto/gap para que las
+   celdas no queden apretadas en pantallas muy angostas
+══════════════════════════════════════════ */
+@media (max-width: 400px) {
+  .grid {
+    grid-auto-rows: 85px;
+    gap: 6px;
+    padding: 0 var(--space-sm) var(--space-xl);
+  }
+}

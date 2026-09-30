@@ -1,0 +1,187 @@
+/* ============================================
+   JORY BOY FAN PAGE — ALBUMS STYLES
+   Albums.module.css
+   ============================================ */
+
+.albums {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* --- ENCABEZADO --- */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  padding: 0 var(--space-lg);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-gold-muted);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-md);
+}
+
+.titulo {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  letter-spacing: 0.015em;
+  margin-bottom: var(--space-sm);
+}
+
+.tituloBlanco {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  letter-spacing: 0.015em;
+}
+
+.tituloGold {
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  letter-spacing: 0.015em;
+  margin-left: 0.15em;
+}
+
+.subtitulo {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* --- GRID --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* --- CARD --- */
+.card {
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--color-gold-muted);
+  box-shadow: var(--gold-glow);
+}
+
+/* Portada */
+.cardCover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.cardCoverPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.cardCoverYear {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: rgba(255,215,0,0.15);
+  letter-spacing: 0.05em;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.card:hover .cardOverlay { opacity: 1; }
+
+.cardVerBtn {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+/* Info */
+.cardInfo {
+  padding: var(--space-md);
+}
+
+.cardTitulo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.02em;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--font-accent);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.cardDot { color: var(--color-gold-muted); }
+
+/* --- RESPONSIVE TABLET (max 1024px) --- */
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- RESPONSIVE MÓVIL (max 600px) --- */
+@media (max-width: 600px) {
+  .albums { padding: var(--space-2xl) 0; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding: 0 var(--space-md);
+  }
+  .cardInfo { padding: var(--space-sm); }
+  .cardTitulo { font-size: var(--text-base); }
+}
+
+
+.cardImg, .coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

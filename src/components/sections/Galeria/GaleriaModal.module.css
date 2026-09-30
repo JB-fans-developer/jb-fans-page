@@ -1,0 +1,174 @@
+/* ============================================
+   JORY BOY FAN PAGE — GALERÍA MODAL STYLES
+   GaleriaModal.module.css
+   ============================================ */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+/* --- BOTÓN CERRAR --- */
+.closeBtn {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--color-gold);
+  border-color: var(--color-gold-muted);
+}
+
+/* --- NAVEGACIÓN PREV / NEXT --- */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-primary);
+  font-size: var(--text-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.navBtn:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: var(--color-gold-muted);
+  color: var(--color-gold);
+}
+
+.navPrev { left: var(--space-lg); }
+.navNext { right: var(--space-lg); }
+
+/* --- VISOR --- */
+.viewer {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.imageWrap {
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* --- ACCIONES --- */
+.actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: var(--gold-glow);
+  transition: background var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-fast);
+}
+
+.downloadBtn:hover {
+  background: rgba(255, 215, 0, 0.12);
+  box-shadow: var(--gold-glow-strong);
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE TABLET --- */
+@media (max-width: 1024px) {
+  .navBtn { width: 42px; height: 42px; font-size: var(--text-xl); }
+  .navPrev { left: var(--space-md); }
+  .navNext { right: var(--space-md); }
+}
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+  .backdrop { padding: var(--space-md); }
+
+  .closeBtn {
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 38px;
+    height: 38px;
+    font-size: var(--text-base);
+  }
+
+  .navBtn {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-lg);
+  }
+
+  .navPrev { left: var(--space-xs); }
+  .navNext { right: var(--space-xs); }
+
+  .imageWrap, .image { max-height: 58vh; }
+
+  .downloadBtn {
+    padding: var(--space-xs) var(--space-lg);
+    font-size: var(--text-xs);
+  }
+}
+
+/* --- RESPONSIVE MÓVIL PEQUEÑO --- */
+@media (max-width: 400px) {
+  .navBtn { display: none; } /* en pantallas muy pequeñas se navega con swipe/scroll, no estorban botones */
+  .imageWrap, .image { max-height: 50vh; }
+}

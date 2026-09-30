@@ -1,0 +1,115 @@
+/* ============================================
+   JORY BOY FAN PAGE — BOTÓN FLOTANTE WHATSAPP
+   FloatingWhatsApp.module.css
+   ============================================ */
+
+.boton {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(10, 10, 10, 0.85);
+  border: 2px solid var(--color-gold);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--gold-glow);
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 300;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold-hover, var(--color-gold));
+}
+
+/* Ícono — verde de marca de WhatsApp, igual convención que Spotify/YouTube en el resto del sitio */
+.icono {
+  position: relative;
+  z-index: 2;
+  font-size: 1.8rem;
+  color: #25D366;
+}
+
+/* Punto de estado "canal activo" */
+.puntoActivo {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #25D366;
+  border: 2px solid var(--color-bg);
+  z-index: 3;
+}
+
+/* Anillo de pulso — efecto "radar", refuerza que el canal está activo */
+.pulso {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold);
+  opacity: 0.7;
+  animation: pulso-anim 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulso-anim {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Tooltip — mismo lenguaje visual que .label del resto de secciones */
+.tooltip {
+  position: absolute;
+  right: calc(100% + var(--space-sm));
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MÓVIL (max 480px)
+══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .boton {
+    width: 52px;
+    height: 52px;
+    bottom: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .icono {
+    font-size: 1.5rem;
+  }
+
+  /* En móvil el tooltip lateral se sale de pantalla fácil — lo escondemos,
+     el ícono + el punto verde ya comunican suficiente por sí solos */
+  .tooltip {
+    display: none;
+  }
+}

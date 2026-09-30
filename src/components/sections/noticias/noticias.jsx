@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import { FaPlay } from 'react-icons/fa6'
 import { SiInstagram } from 'react-icons/si'
 import { ULTIMO_SENCILLO, ULTIMO_VIDEO, FAN_DEL_MES, UN_DIA_COMO_HOY } from '../../../constants/index'
-import styles from './Noticias.module.css'
+import styles from './noticias.module.css'
 
 /* ── Widget "Escúchalo ahora" — embed de Spotify ── */
 function EscuchaAhora() {

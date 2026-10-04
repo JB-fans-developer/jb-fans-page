@@ -47,6 +47,12 @@ import showdes1 from '../assets/images/showdestacado/1show.png'
 import showdes2 from '../assets/images/showdestacado/2show.png'
 import showdes3 from '../assets/images/showdestacado/video1show.mp4'
 
+/* Paquetes de frases */
+import amorImg from '../assets/images/frases/amor.webp' 
+import desamorImg from '../assets/images/frases/desamor.webp'
+import perreoImg from '../assets/images/frases/perreo.webp'
+import calleImg from '../assets/images/frases/calle.webp'
+
 export const ALBUMS = [
   {
     id: 1,
@@ -532,33 +538,42 @@ export const FRASES_CATEGORIAS = [
     id: 'amor',
     nombre: 'Amor',
     emoji: '❤️',
+    imagen: amorImg,
     color: '#E91E8C',
     colorGlow: 'rgba(233, 30, 140, 0.35)',
     colorTinte: 'rgba(233, 30, 140, 0.08)',
+    colorVelo: 'rgba(233, 30, 140, 0.55)',
   },
   {
     id: 'desamor',
     nombre: 'Desamor',
     emoji: '💙',
+   imagen: desamorImg,
     color: '#2E6FE8',
     colorGlow: 'rgba(46, 111, 232, 0.35)',
     colorTinte: 'rgba(46, 111, 232, 0.08)',
+    colorVelo: 'rgba(46, 111, 232, 0.55)',
   },
   {
     id: 'perreo',
     nombre: 'Perreo',
     emoji: '💚',
+    imagen: perreoImg,
     color: '#0F6B34',
     colorGlow: 'rgba(15, 107, 52, 0.4)',
     colorTinte: 'rgba(15, 107, 52, 0.1)',
+    colorVelo: 'rgba(233, 30, 140, 0.55)',
+    colorVelo: 'rgba(15, 107, 52, 0.6)',
   },
   {
     id: 'calle',
     nombre: 'Calle',
     emoji: '🩵',
+    imagen: calleImg,
     color: '#0C6E7A',
     colorGlow: 'rgba(12, 110, 122, 0.4)',
     colorTinte: 'rgba(12, 110, 122, 0.1)',
+    colorVelo: 'rgba(12, 110, 122, 0.6)',
   },
 ]
 

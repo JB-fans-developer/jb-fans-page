@@ -5,10 +5,12 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { SiSpotify, SiYoutube, SiApplemusic } from 'react-icons/si'
 import { FRASES_CATEGORIAS, FRASES } from '../../../constants/index'
+import fotoJoryFondo from '../../../assets/images/frases/jory-frases-bg.png'
 import styles from './Frases.module.css'
 
-const DURACION_CARGA = 2000
+const DURACION_CARGA = 3000
 
 /* ── Pantalla de carga ── */
 function CargandoContenido({ categoria }) {
@@ -21,10 +23,12 @@ function CargandoContenido({ categoria }) {
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
-      <span className={styles.cargandoEmoji}>{categoria.emoji}</span>
       <div className={styles.cargandoAnillo} />
       <p className={styles.cargandoTexto}>
         Cargando frase de {categoria.nombre.toUpperCase()}...
+      </p>
+      <p className={styles.cargandoAviso}>
+        Haz screenshot y comparte en tus historias
       </p>
     </motion.div>
   )
@@ -33,40 +37,66 @@ function CargandoContenido({ categoria }) {
 /* ── Placeholder temporal — se reemplaza por la tarjeta real
    en el siguiente paso ── */
 function ResultadoPlaceholder({ frase, categoria, onClose }) {
-  const [mostrarAviso, setMostrarAviso] = useState(true)
-
-  useEffect(() => {
-    const t = setTimeout(() => setMostrarAviso(false), 1000)
-    return () => clearTimeout(t)
-  }, [])
-
   return (
     <motion.div
       className={styles.resultadoPlaceholder}
-      style={{ '--cat-color': categoria.color, '--cat-tinte': categoria.colorTinte }}
+      style={{
+        '--cat-color': categoria.color,
+        '--cat-tinte': categoria.colorTinte,
+        '--cat-velo': categoria.colorVelo,
+      }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <button type="button" onClick={onClose} className={styles.placeholderCerrar}>✕</button>
-      <span>{categoria.emoji} {categoria.nombre}</span>
-      <p>"{frase.texto}"</p>
-      <small>{frase.cancion}</small>
+      <img src={fotoJoryFondo} alt="" aria-hidden="true" className={styles.resultadoFondo} />
+      <div className={styles.resultadoVelo} />
 
-      <AnimatePresence>
-        {mostrarAviso && (
-          <motion.span
-            className={styles.resultadoAviso}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            Haz screenshot y comparte en tus historias
-          </motion.span>
+      <div className={styles.resultadoContenido}>
+        <button type="button" onClick={onClose} className={styles.placeholderCerrar}>✕</button>
+        <span className={styles.resultadoArtista}>Jory Boy</span>
+        <p className={styles.resultadoFrase}>"{frase.texto}"</p>
+        <small>{frase.cancion}</small>
+
+        {frase.streaming && (
+          <div className={styles.resultadoStreaming}>
+            {frase.streaming.spotify && (
+              <a
+                href={frase.streaming.spotify}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.resultadoIcono}
+                aria-label="Escuchar en Spotify"
+              >
+                <SiSpotify />
+              </a>
+            )}
+            {frase.streaming.youtube && (
+              <a
+                href={frase.streaming.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.resultadoIcono}
+                aria-label="Ver en YouTube"
+              >
+                <SiYoutube />
+              </a>
+            )}
+            {frase.streaming.apple && (
+              <a
+                href={frase.streaming.apple}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.resultadoIcono}
+                aria-label="Escuchar en Apple Music"
+              >
+                <SiApplemusic />
+              </a>
+            )}
+          </div>
         )}
-      </AnimatePresence>
+      </div>
     </motion.div>
   )
 }
@@ -88,8 +118,13 @@ function Puerta({ categoria, onClick, deshabilitada }) {
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.2 }}
     >
-      <span className={styles.puertaEmoji}>{categoria.emoji}</span>
-      <span className={styles.puertaNombre}>{categoria.nombre}</span>
+      {categoria.imagen ? (
+        <img src={categoria.imagen} alt={categoria.nombre} className={styles.puertaImagen} />
+      ) : (
+        <span className={styles.puertaEmoji}>{categoria.emoji}</span>
+      )}
+
+      <div className={styles.puertaOverlay} />
     </motion.button>
   )
 }

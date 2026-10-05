@@ -464,13 +464,13 @@ export const ULTIMO_VIDEO = {
    con la inicial del nombre mientras no tengas la foto.
 ══════════════════════════════════════════ */
 export const FAN_DEL_MES = {
-  nombre: 'Nombre del fan',
-  edad: 22,
-  ciudad: 'Ciudad',
-  pais: 'País',
+  nombre: 'Marleen',
+  edad: 24,
+  ciudad: 'Ciudad México',
+  pais: 'México',
   imagen: fanmes,
-  texto: 'Un texto breve contando por qué este fan se ganó el reconocimiento del mes — su historia, su fanatismo, o algo especial que hizo por el club.',
-    instagram: 'https://instagram.com/usuario_del_fan',
+  texto: 'Este momento sucede un 2 de febrero junto con el fan club “La Ganga”. Lo fuimos a recibir al aeropuerto y, en ocasiones anteriores, había podido enseñarle mi tatuaje que tiene su nombre. Ese día se lo vuelvo a enseñar y me dice que nos tomáramos una foto. Luego me dice que iba a subir la foto a redes y me emocioné un montón. Pasaron los días y un día normal desperté y ya tenía varios mensajes sobre la publicación de Jory conmigo. Al verla, grité y brinqué de la emoción. Fernando es un gran ser humano, una gran persona, y por eso aún se siente más bonito.',
+    instagram: 'https://www.instagram.com/marleen_sm/',
 
 }
 

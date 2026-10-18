@@ -42,21 +42,25 @@ function ResultadoPlaceholder({ frase, categoria, onClose }) {
       className={styles.resultadoPlaceholder}
       style={{
         '--cat-color': categoria.color,
-        '--cat-tinte': categoria.colorTinte,
-        '--cat-velo': categoria.colorVelo,
+        '--cat-glow': categoria.colorGlow,
       }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <img src={fotoJoryFondo} alt="" aria-hidden="true" className={styles.resultadoFondo} />
-      <div className={styles.resultadoVelo} />
+      {/* Fondo: luz de la categoría + vinilo girando + comilla + grano */}
+      <div className={styles.resultadoFondoCapa} aria-hidden="true">
+        <span className={styles.resultadoLuz} />
+        <span className={styles.resultadoVinilo} />
+        <span className={styles.resultadoComilla}>&ldquo;</span>
+        <span className={styles.resultadoGrano} />
+      </div>
 
       <div className={styles.resultadoContenido}>
         <button type="button" onClick={onClose} className={styles.placeholderCerrar}>✕</button>
         <span className={styles.resultadoArtista}>Jory Boy</span>
-        <p className={styles.resultadoFrase}>"{frase.texto}"</p>
+        <p className={styles.resultadoFrase}>{frase.texto}</p>
         <small>{frase.cancion}</small>
 
         {frase.streaming && (
@@ -83,17 +87,6 @@ function ResultadoPlaceholder({ frase, categoria, onClose }) {
                 <SiYoutube />
               </a>
             )}
-            {frase.streaming.apple && (
-              <a
-                href={frase.streaming.apple}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.resultadoIcono}
-                aria-label="Escuchar en Apple Music"
-              >
-                <SiApplemusic />
-              </a>
-            )}
           </div>
         )}
       </div>
@@ -107,16 +100,11 @@ function Puerta({ categoria, onClick, deshabilitada }) {
     <motion.button
       type="button"
       className={styles.puerta}
-      style={{
-        '--cat-color': categoria.color,
-        '--cat-glow': categoria.colorGlow,
-        '--cat-tinte': categoria.colorTinte,
-      }}
       onClick={onClick}
       disabled={deshabilitada}
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -4 }}
       whileTap={{ scale: 0.97 }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.25 }}
     >
       {categoria.imagen ? (
         <img src={categoria.imagen} alt={categoria.nombre} className={styles.puertaImagen} />

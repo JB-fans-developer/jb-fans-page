@@ -57,8 +57,16 @@ function ResultadoPlaceholder({ frase, categoria, onClose }) {
         <span className={styles.resultadoGrano} />
       </div>
 
+      <button
+        type="button"
+        onClick={onClose}
+        className={styles.placeholderCerrar}
+        aria-label="Cerrar frase"
+      >
+        ✕
+      </button>
+
       <div className={styles.resultadoContenido}>
-        <button type="button" onClick={onClose} className={styles.placeholderCerrar}>✕</button>
         <span className={styles.resultadoArtista}>Jory Boy</span>
         <p className={styles.resultadoFrase}>{frase.texto}</p>
         <small>{frase.cancion}</small>

@@ -231,19 +231,27 @@
     border-radius: calc(var(--radius-lg) - 4px);
   }
 }
-/* --- BACKDROP / OVERLAY --- */
+
+/* --- BACKDROP / OVERLAY CON GLASSMORPHISM --- */
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   z-index: 200;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: var(--space-lg);
+
+  /* Oscurecimiento consistente */
+  background-color: rgba(0, 0, 0, 0.72);
+
+  /* Desenfoque del contenido detrás del modal */
+  -webkit-backdrop-filter: blur(14px) saturate(70%);
+  backdrop-filter: blur(14px) saturate(70%);
 }
+
 
 /* --- CARGA --- */
 .cargando {
@@ -276,21 +284,32 @@
 }
 
 /* --- PLACEHOLDER TEMPORAL (paso siguiente lo reemplaza) --- */
+
 .resultadoPlaceholder {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  background: rgba(9, 9, 9, 0.88);
-  backdrop-filter: blur(16px) saturate(130%);
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
+
+  background: rgba(9, 9, 9, 0.92);
+
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  backdrop-filter: blur(18px) saturate(130%);
+
   border: 1.5px solid var(--cat-color);
   border-radius: var(--radius-lg);
+
   padding: var(--space-2xl);
   max-width: 500px;
   text-align: center;
+
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  box-shadow: 0 0 40px var(--cat-glow);
+
+  box-shadow:
+    0 0 40px var(--cat-glow),
+    0 20px 60px rgba(0, 0, 0, 0.5);
 }
+
 
 
 /* El contenido real va por encima de ambas capas */
@@ -432,16 +451,63 @@
   box-shadow: 0 0 16px var(--cat-glow);
 }
 
+
 .placeholderCerrar {
   position: absolute;
-  top: var(--space-md);
-  right: var(--space-md);
-  background: none;
-  border: none;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 50%;
+
   color: var(--color-text-secondary);
+  font-size: 18px;
+  line-height: 1;
+
   cursor: pointer;
-  font-size: var(--text-lg);
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
+
+.placeholderCerrar:hover {
+  color: var(--color-gold);
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--color-gold);
+  transform: scale(1.05);
+}
+
+.placeholderCerrar:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .placeholderCerrar {
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .resultadoPlaceholder {
+    padding: 3.5rem 1.25rem 1.5rem;
+  }
+}
+
 
 .cargandoAviso {
   font-family: var(--font-accent);

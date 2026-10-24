@@ -161,13 +161,12 @@ function Frases() {
     <section className={styles.frases} id="frases">
 
       <div className={styles.header}>
-        <span className={styles.label}>Elige tu camino</span>
         <h2 className={styles.titulo}>
-          <span className={styles.tituloBlanco}>TU</span>
-          <span className={styles.tituloGold}>FRASE</span>
+          <span className={styles.tituloBlanco}>JORY</span>
+          <span className={styles.tituloGold}>FRASES</span>
         </h2>
         <p className={styles.subtitulo}>
-          Toca una puerta y deja que el azar elija la frase que te representa hoy.
+          Deja que el azar elija la frase que te representa hoy.
         </p>
       </div>
 

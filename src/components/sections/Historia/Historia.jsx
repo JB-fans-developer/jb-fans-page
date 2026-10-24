@@ -247,6 +247,10 @@ function Historia() {
           </span>
         </h2>
 
+        <div className={styles.memoriaSeparador} aria-hidden="true">
+          <span className={styles.memoriaSeparadorRombo} />
+        </div>
+
         <p className={styles.memoriaSubtitulo}>{MEMORIA.subtitulo}</p>
 
         <div className={styles.memoriaImagenWrap}>

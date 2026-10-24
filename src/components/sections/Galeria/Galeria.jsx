@@ -49,7 +49,7 @@ function Galeria() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.25 }}
         >
-          Cada imagen es un instante de su historia musical, contado desde adentro.
+          Cada imagen es un instante de su historia musical
         </motion.p>
       </div>
 

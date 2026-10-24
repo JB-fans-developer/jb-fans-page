@@ -494,9 +494,7 @@
 .memoriaSection {
   max-width: 640px;
   margin: 0 auto;
-  padding: var(--space-3xl) var(--space-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -524,7 +522,7 @@
   flex-direction: column;
   align-items: center;
   line-height: 0.92;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-md);
 }
 .memoriaTituloBlanco {
   font-family: var(--font-display);
@@ -559,22 +557,68 @@
   white-space: nowrap;
 }
 
+/* Separador dorado fino: líneas que se desvanecen + rombo central */
+.memoriaSeparador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 220px;
+  margin-bottom: var(--space-md);
+}
+
+.memoriaSeparador::before,
+.memoriaSeparador::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+}
+
+.memoriaSeparador::before {
+  background: linear-gradient(to right, transparent, var(--color-gold-muted));
+}
+
+.memoriaSeparador::after {
+  background: linear-gradient(to left, transparent, var(--color-gold-muted));
+}
+
+.memoriaSeparadorRombo {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+  box-shadow: var(--gold-glow);
+}
+
 .memoriaSubtitulo {
+  position: relative;
+  z-index: 2; /* siempre por encima del resplandor de la foto */
   font-family: var(--font-body);
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(var(--text-base), 1.4vw, var(--text-xl));
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-  max-width: 520px;
-  margin-bottom: var(--space-2xl);
+  font-size: clamp(1.1rem, 1rem + 0.7vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  max-width: 34ch;
+  text-wrap: balance;
+  margin-bottom: var(--space-lg);
+  width: 100%;
+  text-align: center;
+}
+.memoriaMensaje {
+  width: 100%;
+  text-align: center;
 }
 
 .memoriaImagenWrap {
   position: relative;
   width: 220px;
   height: 220px;
-  margin-bottom: var(--space-xl);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-lg);
 }
 
 .memoriaHalo {
@@ -620,12 +664,15 @@
 }
 
 .memoriaMensaje {
+  position: relative;
+  z-index: 2;
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: clamp(var(--text-sm), 1.3vw, var(--text-lg));
+  font-size: clamp(1rem, 0.92rem + 0.35vw, 1.125rem);
+  line-height: 1.85;
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  max-width: 460px;
+  max-width: 44ch;
+  text-wrap: pretty;
 }
 
 @media (max-width: 1024px) {
@@ -633,9 +680,10 @@
 }
 
 @media (max-width: 768px) {
-  .memoriaSection { padding: var(--space-2xl) var(--space-md); }
-  .memoriaImagenWrap { width: 160px; height: 160px; margin-bottom: var(--space-lg); }
-  .memoriaSubtitulo { margin-bottom: var(--space-xl); }
+  .memoriaSection { padding: var(--space-xl) var(--space-md); }
+  .memoriaSeparador { margin-bottom: var(--space-sm); }
+  .memoriaSubtitulo { margin-bottom: var(--space-md); }
+  .memoriaImagenWrap { width: 160px; height: 160px; margin-bottom: var(--space-md); }
 }
 
 @media (max-width: 400px) {

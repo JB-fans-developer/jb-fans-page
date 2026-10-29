@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { label: 'Shows', href: '/shows', interno: true },
   { label: 'Frases', href: '/frases', interno: true },
   { label: 'Fan Test', href: '/fan-test', interno: true },
+  { label: 'Comunidad', href: '/comunidad', interno: true },
 ]
 
 function Navbar() {

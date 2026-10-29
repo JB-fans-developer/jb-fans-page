@@ -11,6 +11,7 @@ import NoticiasPage from './pages/Noticias/Noticias.page'
 import FloatingWhatsApp from './components/layout/FloatingWhatsApp/FloatingWhatsApp'
 import ShowsPage from './pages/Shows/Shows.page'
 import FanTestPage from './pages/FanTest/FanTest.page'
+import ComunidadPage from './pages/Comunidad/Comunidad.page'
 import ScrollToTop from './components/ScrollToTop'
 import FrasesPage from './pages/Frases/Frases.page'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/shows" element={<ShowsPage />} />
         <Route path="/frases" element={<FrasesPage />} />
         <Route path="/fan-test" element={<FanTestPage />} />
+        <Route path="/comunidad" element={<ComunidadPage />} />
       </Routes>
       <FloatingWhatsApp />
     </BrowserRouter>

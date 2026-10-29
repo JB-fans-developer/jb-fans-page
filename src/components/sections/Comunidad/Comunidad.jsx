@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { FaLock } from 'react-icons/fa6'
 import styles from './Comunidad.module.css'
 import joryComunidad from '../../../assets/images/comunidad/jory-comunidad.png'
+import { useEffect, useState } from 'react'
 
 const contenedor = {
     oculto: {},
@@ -16,6 +17,22 @@ const subir = {
 }
 
 function Comunidad() {
+    const [imagenLista, setImagenLista] = useState(false)
+
+    useEffect(() => {
+        const imagen = new Image()
+        imagen.src = joryComunidad
+
+        if (imagen.complete && imagen.naturalWidth > 0) {
+            setImagenLista(true)
+        } else {
+            imagen.onload = () => setImagenLista(true)
+        }
+
+        return () => {
+            imagen.onload = null
+        }
+    }, [])
     return (
         <section className={styles.comunidad} id="comunidad">
             {/* Fondo decorativo */}
@@ -33,7 +50,9 @@ function Comunidad() {
                     src={joryComunidad}
                     alt=""
                     className={styles.joryImagen}
+                    onLoad={() => setImagenLista(true)}
                 />
+                
             </motion.div>
             <motion.div
                 className={styles.contenido}

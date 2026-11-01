@@ -6,6 +6,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { HISTORIA_ETAPAS, FAMILIA, MEMORIA } from '../../../constants/index'
+import DjMiguelMix from './DjMiguelMix'
 import styles from './Historia.module.css'
 
 /* --- Variantes de animación --- */
@@ -201,6 +202,10 @@ function Historia() {
           />
         ))}
       </div>
+      {/* ══════════════════════════════════════
+          DJ MIGUEL MIX
+      ══════════════════════════════════════ */}
+      <DjMiguelMix />
 
       {/* ══════════════════════════════════════
           3. SECCIÓN FAMILIA

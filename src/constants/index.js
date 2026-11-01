@@ -53,6 +53,13 @@ import desamorImg from '../assets/images/frases/desamor.webp'
 import perreoImg from '../assets/images/frases/perreo.webp'
 import calleImg from '../assets/images/frases/calle.webp'
 
+/* IMG miguel mix*/
+import djPrincipal from '../assets/images/dj-miguel-mix/principal.jpg'
+import djFoto1 from '../assets/images/dj-miguel-mix/foto1.jpg'
+import djFoto2 from '../assets/images/dj-miguel-mix/foto2.jpg'
+import djFoto3 from '../assets/images/dj-miguel-mix/foto3.jpg'
+import djFoto4 from '../assets/images/dj-miguel-mix/foto4.jpg'
+
 export const ALBUMS = [
   {
     id: 1,
@@ -894,3 +901,16 @@ export const NIVELES_TEST = [
     frase: 'Todavía te falta calle.',
   },
 ]
+
+export const DJ_MIGUEL_MIX = {
+  nombre: 'DJ Miguel Mix',
+  descripcion:
+    'Detrás de cada presentación hay alguien que mantiene la energía arriba el que hace esto posible es: DJ Miguel Mix acompañando a Jory en cada uno de sus shows.',
+  imagenPrincipal:  djPrincipal,
+  fotos: [
+    { id: 'dj-1', src: djFoto1, alt: 'Jory junto a DJ Miguel Mix, foto 1' },
+    { id: 'dj-2', src: djFoto2, alt: 'Jory junto a DJ Miguel Mix, foto 2' },
+    { id: 'dj-3', src: djFoto3, alt: 'Jory junto a DJ Miguel Mix, foto 3' },
+    { id: 'dj-4', src: djFoto4, alt: 'Jory junto a DJ Miguel Mix, foto 4' },
+  ],
+}

@@ -1,0 +1,326 @@
+/* ============================================
+   JORY BOY FAN PAGE — DJ MIGUEL MIX STYLES
+   DjMiguelMix.module.css
+   ============================================ */
+
+.dj {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg) var(--space-3xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════
+   TEXTO
+══════════════════════════════════════════ */
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-montserrat);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-gold-muted);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-xl);
+  margin-bottom: 12px;
+}
+
+.titulo {
+  font-family: var(--font-montserrat);
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin-bottom: 12px;
+}
+
+.tituloBlanco {
+  color: var(--color-text-primary);
+}
+
+.tituloGold {
+  color: var(--color-gold);
+  margin-left: 0.12em;
+  text-shadow: var(--gold-glow);
+}
+
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.descripcion {
+  font-family: var(--font-montserrat);
+  font-weight: 400;
+  font-size: clamp(1rem, 0.92rem + 0.35vw, 1.125rem);
+  line-height: 1.65;
+  letter-spacing: -0.025em;
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.pista {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: 28px;
+  font-family: var(--font-montserrat);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-gold-muted);
+}
+
+/* ══════════════════════════════════════════
+   MOSAICO — una sola foto partida en 4 fragmentos
+   Cada fragmento muestra su cuarto de la misma imagen.
+   Si tus fotos son verticales/horizontales, cambia el
+   aspect-ratio (ej. 4 / 5 o 5 / 4).
+══════════════════════════════════════════ */
+.mosaico {
+  --dj-gap: 10px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: var(--dj-gap);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Resplandor dorado detrás de todo el mosaico */
+.mosaico::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  box-shadow: 0 0 80px 30px rgba(255, 215, 0, 0.14);
+  pointer-events: none;
+}
+
+.fragmento {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #111 0%, #1e1e1e 100%);
+  cursor: pointer;
+  transition: box-shadow var(--transition-normal);
+}
+
+/* El marco dorado va en una capa aparte para no desalinear la foto */
+.fragmento::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid rgba(255, 215, 0, 0.28);
+  border-radius: inherit;
+  pointer-events: none;
+  transition: border-color var(--transition-normal);
+}
+
+.fragmento:hover,
+.fragmento:focus-visible {
+  box-shadow: var(--gold-glow);
+}
+
+.fragmento:hover::after,
+.fragmento:focus-visible::after {
+  border-color: var(--color-gold);
+}
+
+.fragmento:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* La imagen mide todo el mosaico y se desplaza para que cada
+   fragmento muestre solo su cuarto (--col / --row vienen del JSX) */
+.fragmentoImg {
+  position: absolute;
+  top: calc(var(--row) * (-100% - var(--dj-gap)));
+  left: calc(var(--col) * (-100% - var(--dj-gap)));
+  width: calc(200% + var(--dj-gap));
+  height: calc(200% + var(--dj-gap));
+  max-width: none;
+  object-fit: cover;
+  user-select: none;
+}
+
+.fragmentoPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: rgba(255, 215, 0, 0.14);
+}
+
+.fragmentoOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(9, 9, 9, 0.7) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.fragmento:hover .fragmentoOverlay,
+.fragmento:focus-visible .fragmentoOverlay {
+  opacity: 1;
+}
+
+/* Iconito siempre visible: en móvil indica que se puede tocar */
+.fragmentoIcono {
+  position: absolute;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  background: rgba(9, 9, 9, 0.65);
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  transition: transform var(--transition-fast);
+}
+
+.fragmento:hover .fragmentoIcono {
+  transform: scale(1.1);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .texto {
+    align-items: center;
+    text-align: center;
+  }
+
+  .descripcion {
+    max-width: 56ch;
+  }
+}
+
+@media (max-width: 768px) {
+  .dj {
+    padding: 0 var(--space-md) var(--space-2xl);
+  }
+
+  .mosaico {
+    --dj-gap: 8px;
+  }
+
+  .fragmentoIcono {
+    width: 30px;
+    height: 30px;
+    right: var(--space-xs);
+    bottom: var(--space-xs);
+  }
+
+  .titulo {
+    margin-bottom: 10px;
+  }
+
+  .divider {
+    margin-bottom: 20px;
+  }
+
+  .descripcion {
+    line-height: 1.6;
+    letter-spacing: -0.025em;
+  }
+
+  .pista {
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 400px) {
+  .mosaico {
+    --dj-gap: 6px;
+  }
+
+  .label {
+    font-size: var(--text-xs);
+    letter-spacing: 0.18em;
+  }
+}
+
+.instagramBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 13px 22px;
+
+  font-family: var(--font-montserrat);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--color-gold);
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid var(--color-gold-muted);
+  border-radius: var(--radius-xl);
+
+  transition: all var(--transition-normal);
+}
+
+.instagramBtn:hover {
+  color: #090909;
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: var(--gold-glow);
+  transform: translateY(-2px);
+}

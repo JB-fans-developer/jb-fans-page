@@ -372,22 +372,22 @@ export const FAMILIA = [
 ]
 
 export const GALERIA = [
-  { id: 1, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789273530/LONDON_BOYZ_MLL2_octubre.jpg", alt: "Jory Boy en concierto", variant: "tall" },
-  { id: 2, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789273584/Gracias_Venezuela_por_su_amor_y_cari%C3%B1o_Me_llevo_este_recuerdo_en_el_coraz%C3%B3n_X_100_PRE_%EF%B8%8F_.jpg", alt: "Backstage antes del show", variant: "tall" },
+  { id: 1, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665356672.jpg", alt: "Jory Boy en concierto", variant: "tall" },
+  { id: 2, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/868379429_18646099318018584_1065980152063237875_n.jpg", alt: "Backstage antes del show", variant: "tall" },
   { id: 3, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789795093/503811186_9843685549061422_8878282373872079192_n.jpg", alt: "Retrato en estudio", variant: "small" },
   { id: 4, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789795303/000123456.jpg", alt: "Jory Boy en gira internacional", variant: "big" },
-  { id: 5, src: "https://picsum.photos/seed/jory05/700/700", alt: "Momento con fanáticos", variant: "small" },
-  { id: 6, src: "https://picsum.photos/seed/jory06/700/1000", alt: "Grabando nuevo material", variant: "tall" },
-  { id: 7, src: "https://picsum.photos/seed/jory07/1000/700", alt: "En el escenario principal", variant: "wide" },
-  { id: 8, src: "https://picsum.photos/seed/jory08/700/700", alt: "Sesión de fotos oficial", variant: "small" },
-  { id: 9, src: "https://picsum.photos/seed/jory09/700/1000", alt: "Jory Boy en entrevista", variant: "tall" },
-  { id: 10, src: "https://picsum.photos/seed/jory10/1000/1300", alt: "Concierto en Puerto Rico", variant: "big" },
-  { id: 11, src: "https://picsum.photos/seed/jory11/700/700", alt: "Momento casual", variant: "small" },
+  { id: 5, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/FB_IMG_1780897704807.jpg", alt: "Momento con fanáticos", variant: "small" },
+  { id: 6, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677689/Screenshot_2026-06-16-21-00-24-447_com.instagram.android-edit.jpg", alt: "Grabando nuevo material", variant: "tall" },
+  { id: 7, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/inicio33.jpg", alt: "En el escenario principal", variant: "wide" },
+  { id: 8, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665566520.jpg", alt: "Sesión de fotos oficial", variant: "small" },
+  { id: 9, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793678135/Screenshot_2026-06-16-21-00-24-447_com.instagram.android-edit.jpg", alt: "Jory Boy en entrevista", variant: "tall" },
+  { id: 10, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665849382.jpg", alt: "Concierto en Puerto Rico", variant: "big" },
+  { id: 11, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677689/IMG_20261027_213024.jpg", alt: "Momento casual", variant: "small" },
   { id: 12, src: "https://picsum.photos/seed/jory12/1000/700", alt: "Con el equipo de producción", variant: "wide" },
-  { id: 13, src: "https://picsum.photos/seed/jory13/700/1000", alt: "Jory Boy de gira", variant: "tall" },
-  { id: 14, src: "https://picsum.photos/seed/jory14/700/700", alt: "Preparándose antes del show", variant: "small" },
+  { id: 13, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793678147/_DSC6064.jpg", alt: "Jory Boy de gira", variant: "tall" },
+  { id: 14, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793666492429.jpg", alt: "Preparándose antes del show", variant: "small" },
   { id: 15, src: "https://picsum.photos/seed/jory15/1000/700", alt: "Actuación en vivo", variant: "wide" },
-  { id: 16, src: "https://picsum.photos/seed/jory16/700/1000", alt: "Jory Boy en la ciudad", variant: "tall" },
+  { id: 16, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665532324.jpg", alt: "Jory Boy en la ciudad", variant: "tall" },
 ]
 
 export const TOP10_CANCIONES = [

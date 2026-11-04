@@ -6,7 +6,8 @@
    cuando se presiona un botón.
    ============================================ */
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { useInView } from 'framer-motion'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
 import { SHOW_DESTACADO } from '../../../constants/index'
 import StackCard from './StackCard'
@@ -31,6 +32,13 @@ function UltimoShowDestacado() {
   })
   const timeoutRef = useRef(null)
 
+  /* Sonido: un solo estado para todos los videos.
+     "enVista" pausa el video cuando la sección sale de la pantalla. */
+  const seccionRef = useRef(null)
+  const enVista = useInView(seccionRef, { amount: 0.3 })
+  const [silenciado, setSilenciado] = useState(false)
+  const bloquearSonido = useCallback(() => setSilenciado(true), [])
+
   useEffect(() => () => clearTimeout(timeoutRef.current), [])
 
   const avanzar = () => {
@@ -52,7 +60,7 @@ function UltimoShowDestacado() {
   if (!medios || medios.length === 0) return null
 
   return (
-    <section className={styles.destacadoSection}>
+    <section ref={seccionRef} className={styles.destacadoSection}>
       <h3 className={styles.showsTitulo}>Último Show Destacado</h3>
 
       <div className={styles.destacadoContenido}>
@@ -71,6 +79,10 @@ function UltimoShowDestacado() {
                   lado={1}
                   alt={nombre}
                   zIndex={10 - posicion}
+                  activo={enVista}
+                  silenciado={silenciado}
+                  onCambiarSilencio={setSilenciado}
+                  onSonidoBloqueado={bloquearSonido}
                 />
               )
             })}

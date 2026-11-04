@@ -43,8 +43,8 @@ import fanmes from '../assets/images/fanmes/marleen.jpg'
 import show1 from '../assets/images/shows/show1.jpg'
 
 /*IMG VIDEOS SHOW DESTACADO*/
-import showdes1 from '../assets/images/showdestacado/1show.png'
-import showdes2 from '../assets/images/showdestacado/2show.png'
+import showdes1 from '../assets/images/showdestacado/1show.jpg'
+import showdes2 from '../assets/images/showdestacado/2show.jpg'
 import showdes3 from '../assets/images/showdestacado/video1show.mp4'
 
 /* Paquetes de frases */
@@ -372,21 +372,21 @@ export const FAMILIA = [
 ]
 
 export const GALERIA = [
-  { id: 1, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665356672.jpg", alt: "Jory Boy en concierto", variant: "tall" },
+  { id: 1, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793712868/IMG_20261103_081939.png", alt: "Jory Boy en concierto", variant: "tall" },
   { id: 2, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/868379429_18646099318018584_1065980152063237875_n.jpg", alt: "Backstage antes del show", variant: "tall" },
   { id: 3, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789795093/503811186_9843685549061422_8878282373872079192_n.jpg", alt: "Retrato en estudio", variant: "small" },
-  { id: 4, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1789795303/000123456.jpg", alt: "Jory Boy en gira internacional", variant: "big" },
+  { id: 4, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793759737/JoryBlue.png", alt: "Jory Boy en gira internacional", variant: "big" },
   { id: 5, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/FB_IMG_1780897704807.jpg", alt: "Momento con fanáticos", variant: "small" },
   { id: 6, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677689/Screenshot_2026-06-16-21-00-24-447_com.instagram.android-edit.jpg", alt: "Grabando nuevo material", variant: "tall" },
-  { id: 7, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677688/inicio33.jpg", alt: "En el escenario principal", variant: "wide" },
-  { id: 8, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665566520.jpg", alt: "Sesión de fotos oficial", variant: "small" },
+  { id: 7, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793760199/jory03198.png", alt: "En el escenario principal", variant: "wide" },
+  { id: 8, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793760477/jory789456.png", alt: "Sesión de fotos oficial", variant: "small" },
   { id: 9, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793678135/Screenshot_2026-06-16-21-00-24-447_com.instagram.android-edit.jpg", alt: "Jory Boy en entrevista", variant: "tall" },
   { id: 10, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665849382.jpg", alt: "Concierto en Puerto Rico", variant: "big" },
   { id: 11, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793677689/IMG_20261027_213024.jpg", alt: "Momento casual", variant: "small" },
-  { id: 12, src: "https://picsum.photos/seed/jory12/1000/700", alt: "Con el equipo de producción", variant: "wide" },
+  { id: 12, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793761801/jory239847.png", alt: "Con el equipo de producción", variant: "wide" },
   { id: 13, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793678147/_DSC6064.jpg", alt: "Jory Boy de gira", variant: "tall" },
-  { id: 14, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793666492429.jpg", alt: "Preparándose antes del show", variant: "small" },
-  { id: 15, src: "https://picsum.photos/seed/jory15/1000/700", alt: "Actuación en vivo", variant: "wide" },
+  { id: 14, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793760199/Jory0147852.png", alt: "Preparándose antes del show", variant: "small" },
+  { id: 15, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793762516/jorymx.png", alt: "Actuación en vivo", variant: "wide" },
   { id: 16, src: "https://res.cloudinary.com/js9il3lz/image/upload/v1793675899/FB_IMG_1793665532324.jpg", alt: "Jory Boy en la ciudad", variant: "tall" },
 ]
 
@@ -493,11 +493,11 @@ export const PROXIMOS_SHOWS = [
   // Ejemplo — reemplaza o agrega los reales:
   {
     id: 'show-1',
-    fecha: '2026-09-19',
-    ciudad: 'Duluth, Georgia',
-    lugar: 'ATLANTA COLISEUM',
+    fecha: '2027-03-6',
+    ciudad: 'CDMX, México',
+    lugar: 'ESTADIO FRAY NANO',
     flyer: show1,
-    urlBoletos: 'https://www.tickeri.com/events/zw98k8xl3e3t/moonlight-music-festival-2026-powered-by-redbull?t_up=partner.spotify&clickref=1101lDMG6piR',
+    urlBoletos: 'https://funticket.mx/evento/ilove-reggaeton-cdmx/',
   },
 ]
 /* ══════════════════════════════════════════
@@ -525,11 +525,11 @@ export const UN_DIA_COMO_HOY = [
    de la pila automáticamente (o con un clic).
 ══════════════════════════════════════════ */
 export const SHOW_DESTACADO = {
-  nombre: 'Nombre del show',
-  ciudad: 'Ciudad',
-  pais: 'País',
-  texto: 'Un texto breve contando qué pasó en este show — el ambiente, un momento especial, cómo reaccionó el público.',
-  creditos: '@usuario_del_fotografo',
+  nombre: 'JORY BOY en Pabblo´s',
+  ciudad: 'Cartagena',
+  pais: 'Colombia',
+  texto: 'Una Noche  inolvidable 🫶🏼 pero, sin dudas, los que nos ayudaron a llevar esta noche a otro nivel fueron los que corearon todas las canciones de principio a fin',
+  creditos: '@pabblos.co & @elponxe',
   medios: [
      { tipo: 'imagen', src: showdes1},
      { tipo: 'imagen', src: showdes2 },

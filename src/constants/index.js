@@ -492,7 +492,7 @@ export const PROXIMOS_SHOWS = [
     id: 'show-1',
     fecha: '2026-11-20',
     ciudad: '129 Atlantic St Stamford CT, USA',
-    lugar: 'RNG CLUB',
+    lugar: 'The Palms Night Club',
     flyer: show2,
     urlBoletos: 'https://www.eventbrite.com/e/jory-boy-live-at-the-palms-tickets-2003943829940',
   },

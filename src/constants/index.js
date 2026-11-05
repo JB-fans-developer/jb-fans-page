@@ -856,7 +856,7 @@ export const FRASES = [
 export const PREGUNTAS_TEST = [
   {
     id: 'q1',
-    pregunta: '¿En qué año nació Jory Boy?',
+    pregunta: '¿En qué año nació Jory?',
     opciones: ['1984', '1986', '1988', '1990'],
     correcta: 1,
   },
@@ -869,8 +869,80 @@ export const PREGUNTAS_TEST = [
   {
     id: 'q3',
     pregunta: '¿Cuál de estos álbumes salió en 2022?',
-    opciones: ['Bubblegum', 'La Esencia', 'Otra Liga', 'Creme De La Creme'],
+    opciones: ['Bubblegum', 'La Esencia', 'Otra Liga II', 'Creme De La Creme'],
     correcta: 0,
+  },
+  {
+    id: 'q4',
+    pregunta: '¿Cuál fue el día y mes de su nacimiento?',
+    opciones: ['25 Septiembre', '10 Octubre', '5 Junio', '5 Julio'],
+    correcta: 3,
+  },
+  {
+    id: 'q5',
+    pregunta: '¿Cuál es el nombre de su madre?',
+    opciones: ['Maria Benitez', 'Ana Sierra', 'Lucia Benitez', 'Sofia Sierra'],
+    correcta: 0,
+  },
+  {
+    id: 'q6',
+    pregunta: '¿Cuál fue la primera ciudad de Estados Unidos a la que se mudó durante su niñez?',
+    opciones: ['Miami', 'Los Angeles', 'Filadelfia', 'New York'],
+    correcta: 2,
+  },
+  {
+    id: 'q7',
+    pregunta: '¿En qué año debutaron Nova y Jory como dúo en la música?',
+    opciones: ['2010', '2000', '2007', '2005'],
+    correcta: 2,
+  },
+    {
+    id: 'q8',
+    pregunta: '¿Cuál fue el primer lanzamiento musical de Nova y Jory?',
+    opciones: ['Por encima', 'Bien loco', 'Saco el Anormal', 'Como lo menea'],
+    correcta: 0,
+  },
+  {
+    id: 'q9',
+    pregunta: '¿Cuál de estos artistas es familiar de Jory?',
+    opciones: ['Ñengo Flow', 'Nova La amenaza', 'Zion', 'Wisin'],
+    correcta: 2,
+  },
+  {
+    id: 'q10',
+    pregunta: '¿Qué significa la inscripción japonesa que aparece en la portada del álbum Matando la Liga I?',
+    opciones: ['Anime', 'Matando la Liga', 'El mejor', 'Amor'],
+    correcta: 3,
+  },
+  {
+    id: 'q11',
+    pregunta: '¿Cuál de los siguientes artistas NO fue incluido en su primer álbum como solista (Matando la Liga)?',
+    opciones: ['Farruko', 'Ñengo flow', 'Zion', 'J alvarez'],
+    correcta: 1,
+  },
+  {
+    id: 'q12',
+    pregunta: '¿Cómo se llama el DJ actual de Jory?',
+    opciones: ['Jan Paul', 'DJ Miguel Mix', 'DJ Mix Time', 'Dj luian'],
+    correcta: 1,
+  },
+  {
+    id: 'q13',
+    pregunta: '¿Cuál de estos temas no cuenta con un video musical oficial?',
+    opciones: ['Cuentos de cama', 'Desnuda', 'Por que cambiar', 'Mala suerte'],
+    correcta: 0,
+  },
+  {
+    id: 'q13',
+    pregunta: '¿Cuál fue la primera grabación de Jory en una canción de trap?',
+    opciones: ['No te hagas', 'Oh Na Na', 'Challet', 'No me busques'],
+    correcta: 1,
+  },
+  {
+    id: 'q15',
+    pregunta: '¿Cuál de estos artistas ha sido considerado uno de sus mejores amigos dentro de la industria musical?',
+    opciones: ['Farruko', 'Wisin', 'Gotay', 'Ñengo Flow'],
+    correcta: 3,
   },
 ]
 

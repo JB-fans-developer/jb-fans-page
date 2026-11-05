@@ -67,7 +67,7 @@ function UltimoShowDestacado() {
 
         <div className={styles.stackColumna}>
           <div className={styles.stackWrap}>
-            {estado.orden.slice(0, 3).map((medioIndex, posicion) => {
+            {estado.orden.slice(0, 4).map((medioIndex, posicion) => {
               const esFrente = posicion === 0
               return (
                 <StackCard

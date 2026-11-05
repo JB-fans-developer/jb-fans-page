@@ -22,7 +22,17 @@
   text-shadow: var(--gold-glow);
   margin-bottom: var(--space-2xl);
 }
-
+.showsSubtitulo {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: clamp(0.78rem, 1.3vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.025em;
+  text-align: center;
+  margin-top: calc(var(--space-lg) * -1);
+  margin-bottom: var(--space-2xl);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.12);
+}
 .timeline {
   display: flex;
   align-items: flex-start;
@@ -181,6 +191,12 @@
     width: 2px;
     height: var(--space-lg);
     background: linear-gradient(to bottom, var(--color-gold-muted), var(--glass-border));
+  }
+  .showsSubtitulo {
+    font-size: 0.76rem;
+    margin-top: calc(var(--space-md) * -1);
+    margin-bottom: var(--space-xl);
+    padding: 0 var(--space-sm);
   }
 }
 

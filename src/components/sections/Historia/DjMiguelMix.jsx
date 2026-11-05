@@ -54,7 +54,6 @@ function DjMiguelMix() {
           >
             <FaInstagram aria-hidden="true" />
             <span>VER PERFIL EN INSTAGRAM</span>
-            <FaArrowUpRightFromSquare aria-hidden="true" />
           </a>
         </motion.div>
 

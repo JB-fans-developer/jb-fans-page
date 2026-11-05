@@ -41,11 +41,14 @@ import fanmes from '../assets/images/fanmes/marleen.jpg'
 
 /* IMG shows*/
 import show1 from '../assets/images/shows/show1.jpg'
+import show2 from '../assets/images/shows/show2.jpg'
+import show3 from '../assets/images/shows/show3.jpg'
 
 /*IMG VIDEOS SHOW DESTACADO*/
 import showdes1 from '../assets/images/showdestacado/1show.jpg'
 import showdes2 from '../assets/images/showdestacado/2show.jpg'
 import showdes3 from '../assets/images/showdestacado/video1show.mp4'
+import showdes4 from '../assets/images/showdestacado/video2show.mp4'
 
 /* Paquetes de frases */
 import amorImg from '../assets/images/frases/amor.webp' 
@@ -449,19 +452,13 @@ export const MEMORIA = {
    El id es la parte final de la URL.
 ══════════════════════════════════════════ */
 export const ULTIMO_SENCILLO = {
-  id: '5ViVSElIxnYSy0QjwftX41',
-  titulo: 'Que se reporten FT (gangsta & Red Fox)',
+  id: '7yRjUvz7l9z88Ln4RLaVTt?si',
+  titulo: 'Ozuna x Jory Boy x Ñengo Flow - Vulnerable',
 }
-/* ══════════════════════════════════════════
-   ÚLTIMO VIDEO — para el widget "Míralo ahora"
-   Actualiza "id" y "duracion" cada vez que suba
-   un video nuevo al canal oficial. El id lo sacas
-   de la URL de YouTube: youtube.com/watch?v=ESTE_ID
-══════════════════════════════════════════ */
 export const ULTIMO_VIDEO = {
-  id: '2PxBw-UkCD4',
-  titulo: 'Que se reporten FT (gangsta & Red Fox)',
-  duracion: '2:57',
+  id: 'OWbhwq9fecg',
+  titulo: 'Ozuna x Jory Boy x Ñengo Flow - Vulnerable',
+  duracion: '4:08',
 }
 
 /* ══════════════════════════════════════════
@@ -493,6 +490,22 @@ export const PROXIMOS_SHOWS = [
   // Ejemplo — reemplaza o agrega los reales:
   {
     id: 'show-1',
+    fecha: '2026-11-20',
+    ciudad: '129 Atlantic St Stamford CT, USA',
+    lugar: 'RNG CLUB',
+    flyer: show2,
+    urlBoletos: 'https://www.eventbrite.com/e/jory-boy-live-at-the-palms-tickets-2003943829940',
+  },
+  {
+    id: 'show-2',
+    fecha: '2026-11-21',
+    ciudad: 'Rionegro, Colombia',
+    lugar: 'RNG CLUB',
+    flyer: show3,
+    urlBoletos: 'https://www.rngclub.co/',
+  },
+  {
+    id: 'show-3',
     fecha: '2027-03-6',
     ciudad: 'CDMX, México',
     lugar: 'ESTADIO FRAY NANO',
@@ -532,6 +545,7 @@ export const SHOW_DESTACADO = {
   creditos: '@pabblos.co & @elponxe',
   medios: [
      { tipo: 'imagen', src: showdes1},
+     { tipo: 'video', src: showdes4},
      { tipo: 'imagen', src: showdes2 },
      { tipo: 'video', src: showdes3 },
   ],
@@ -950,27 +964,22 @@ export const NIVELES_TEST = [
   {
     min: 100,
     titulo: 'NIVEL MATANDO LA LIGA',
-    frase: 'Tú no eres fan... tú eres parte de la historia.',
   },
   {
     min: 90,
     titulo: 'JORY LOVER',
-    frase: 'Muy pocos llegan hasta aquí.',
   },
   {
     min: 70,
     titulo: 'REAL FAN',
-    frase: 'Se nota que llevas tiempo escuchando a Jory.',
   },
   {
     min: 40,
     titulo: 'VAS POR BUEN CAMINO',
-    frase: 'Ya conoces la esencia.',
   },
   {
     min: 0,
     titulo: 'FAN DE OCASIÓN',
-    frase: 'Todavía te falta calle.',
   },
 ]
 

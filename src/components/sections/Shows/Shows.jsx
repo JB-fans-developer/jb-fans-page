@@ -34,7 +34,9 @@ function Shows() {
   return (
     <section className={styles.showsSection} id="shows">
       <h3 className={styles.showsTitulo}>Próximos Shows</h3>
-
+      <p className={styles.showsSubtitulo}>
+  Presiona en un evento para comprar tus boletas
+</p>
       <div className={styles.timeline}>
         {items.map((show, i) => {
           const { dia, mes } = show.placeholder ? {} : formatearFechaCorta(show.fecha)

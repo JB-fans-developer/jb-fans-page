@@ -13,7 +13,8 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  min-height: 100svh; /* en móvil descuenta la barra del navegador */
+  min-height: 100svh;
+  /* en móvil descuenta la barra del navegador */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,48 +44,134 @@
   max-width: 1100px;
 }
 
-/* ── Mensaje ── */
+/* ══════════════════════════════════════════
+   PORTADA — foto en el centro + texto abajo
+══════════════════════════════════════════ */
+
+/* Menos aire arriba y abajo: la foto es la protagonista */
+.heroPortada {
+  padding: 104px var(--space-lg) var(--space-xl);
+}
+
+.heroPortada .comenzarBtn {
+  margin-top: var(--space-lg);
+}
+
+/* Marco metálico dorado (1.5 px) + resplandor.
+   Ancho: la mitad de la pantalla, sin pasar de 560 px */
+.foto {
+  position: relative;
+  width: min(38vw, 460px);
+  height: clamp(400px, calc(100svh - 220px), 740px);
+  padding: 1.5px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #9c7c0d 30%,
+    #f2cb05 55%,
+    #8a6d0b 80%,
+    #ffd700 100%
+  );
+  box-shadow:
+    0 0 20px 4px rgba(255, 215, 0, 0.3),
+    0 0 60px 14px rgba(255, 215, 0, 0.14),
+    0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+.fotoInterior {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--radius-xl) - 1.5px);
+  background: #090909;
+}
+
+.fotoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* Degradado negro desde abajo: funde la foto con el fondo
+   y deja un lugar limpio para el texto */
+.fotoDegradado {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(9, 9, 9, 0.96) 0%,
+      rgba(9, 9, 9, 0.85) 22%,
+      rgba(9, 9, 9, 0.45) 45%,
+      transparent 68%);
+  pointer-events: none;
+}
+
+/* ── Mensaje: más pequeño, centrado en la parte baja de la foto ── */
 .heroTitulo {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: var(--space-md);
+  z-index: 10;
+
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
-  line-height: 0.82;
-  margin-bottom: var(--space-xl);
+  justify-content: center;
+
+  padding: 0 20px;
+  margin: 0 !important;
+  line-height: 0.95;
+  text-align: center;
 }
-.heroLinea1 {
+
+.heroTitulo span {
   display: block;
   width: 100%;
-  white-space: nowrap;
-  text-align: justify;
-  text-align-last: justify;
+  max-width: none;
+  text-align: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.heroLinea1,
+.heroLinea2,
+.heroLinea3 {
+  width: 100%;
+  text-align: center;
+}
+
+.heroLinea1 {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 4vw, 3rem);
-  letter-spacing: 0.08em;
+  font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+  letter-spacing: 0.14em;
   color: var(--color-text-primary);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .heroLinea2 {
-  white-space: nowrap;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 11vw, 9rem);
-  letter-spacing: 0.01em;
+  font-size: clamp(1.9rem, 5vw, 3.1rem);
+  letter-spacing: 0.02em;
   color: var(--color-gold);
   text-shadow: var(--gold-glow);
 }
 
-
 .heroLinea3 {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: clamp(2.4rem, 8vw, 6rem);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
   line-height: 1;
   color: var(--color-text-primary);
-  margin-top: -0.26em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+  margin-top: -0.1em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 /* ── Botón traslúcido ── */
@@ -161,4 +248,28 @@
   position: relative;
   z-index: 1;
   margin-top: -0.55em;
+}
+
+/* ══════════════════════════════════════════
+   PORTADA — RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .foto {
+    width: min(88vw, 460px);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroPortada {
+    padding: 92px var(--space-md) var(--space-lg);
+  }
+
+  .foto {
+    width: 90vw;
+    height: clamp(370px, calc(100svh - 210px), 680px);
+  }
+
+  .heroTitulo {
+    bottom: var(--space-sm);
+  }
 }

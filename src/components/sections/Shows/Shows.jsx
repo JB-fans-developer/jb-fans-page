@@ -24,7 +24,7 @@ function Shows() {
   const shows = [...PROXIMOS_SHOWS]
     .filter((s) => s.fecha)
     .sort((a, b) => a.fecha.localeCompare(b.fecha))
-    .slice(0, 3)
+    .slice(0, 4)
 
   const items = [...shows]
   while (items.length < 3) {

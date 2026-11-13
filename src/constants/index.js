@@ -44,12 +44,14 @@ import show1 from '../assets/images/shows/show1.jpg'
 import show2 from '../assets/images/shows/show2.jpg'
 import show3 from '../assets/images/shows/show3.jpg'
 import show4 from '../assets/images/shows/show4.jpg'
+import show5 from '../assets/images/shows/show5.jpg'
 
 /*IMG VIDEOS SHOW DESTACADO*/
 import showdes1 from '../assets/images/showdestacado/1show.jpg'
 import showdes2 from '../assets/images/showdestacado/2show.jpg'
 import showdes3 from '../assets/images/showdestacado/video1show.mp4'
 import showdes4 from '../assets/images/showdestacado/video2show.mp4'
+
 
 /* Paquetes de frases */
 import amorImg from '../assets/images/frases/amor.webp' 
@@ -512,6 +514,14 @@ export const PROXIMOS_SHOWS = [
     lugar: '3971 Boulevard Robert',
     flyer: show4,
     urlBoletos: 'https://golden-entertainment.bloomtickets.ca/event/4740',
+  },
+  {
+    id: 'show-4',
+    fecha: '2027-12-11',
+    ciudad: 'Toronto, Canadá',
+    lugar: 'VIVO Event Venue',
+    flyer: show5,
+    urlBoletos: 'https://www.jasspass.com/event/jory-boy-in-toronto',
   },
 ]
 /* ══════════════════════════════════════════

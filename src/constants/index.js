@@ -43,6 +43,7 @@ import fanmes from '../assets/images/fanmes/marleen.jpg'
 import show1 from '../assets/images/shows/show1.jpg'
 import show2 from '../assets/images/shows/show2.jpg'
 import show3 from '../assets/images/shows/show3.jpg'
+import show4 from '../assets/images/shows/show4.jpg'
 
 /*IMG VIDEOS SHOW DESTACADO*/
 import showdes1 from '../assets/images/showdestacado/1show.jpg'
@@ -506,11 +507,11 @@ export const PROXIMOS_SHOWS = [
   },
   {
     id: 'show-3',
-    fecha: '2027-03-6',
-    ciudad: 'CDMX, México',
-    lugar: 'ESTADIO FRAY NANO',
-    flyer: show1,
-    urlBoletos: 'https://funticket.mx/evento/ilove-reggaeton-cdmx/',
+    fecha: '2027-12-10',
+    ciudad: 'Montreal, Canadá',
+    lugar: '3971 Boulevard Robert',
+    flyer: show4,
+    urlBoletos: 'https://golden-entertainment.bloomtickets.ca/event/4740',
   },
 ]
 /* ══════════════════════════════════════════
